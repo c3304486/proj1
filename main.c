@@ -66,3 +66,39 @@ void Encrypt (char message[], int key){
 }
 }
 }
+
+void Decrypt (char msg [], int key){
+    int i, ch;
+    int change, temp, key_temp;
+    
+    for (i = 0; msg[i] != '\0'; ++i)
+    {
+        ch = msg [i];
+        if ((ch >= 65 && ch <= 90))
+        {
+            if ((ch - key) >= 65)
+             }
+        else
+        {
+            temp = ch - 65;
+            key_temp = key - temp;
+            ch = 91 - key_temp;
+        }
+        msg [i] = ch;
+    }
+    else
+    if ((ch >= 97 && ch <= 122))
+    {
+        if ((ch - key) >= 97)
+        {
+            ch = ch -key;
+        }
+        else
+        {
+            temp = ch - 97;
+            key_temp = key - temp;
+            ch = 123 - key_temp;
+        }
+        msg [i] = ch;
+    }
+}
